@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="" src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+  <div class="count__wrapper" id="app">
+    <div class="count__card">
+      <h1>{{title}}</h1>
+      <form class="form-input" action="" method="post">
+        <input id="kek" type="text" v-bind:placeholder="place" v-bind:value = "inputValue" v-on:input = "inputChangeHandler"/>
+      </form>
+      <div class="buttons__wrapper">
+        <button class="btn new" v-on:click="inputNotes">Добавить</button>
+      </div>
+      <div class="newpost" v-for = "(myNone, index) in notes" v-bind:key="(myNone.id)">
+        <p>({{index + 1}}) {{myNone.text}}</p>
+        <div class="btn delete" v-on:click = "deleteNote(myNone.id)">delete</div>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
